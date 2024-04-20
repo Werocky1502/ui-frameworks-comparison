@@ -366,7 +366,7 @@ FodyWeavers.xsd
 **/client/src/app/generated/
 
 # Compiled output
-/dist
+**/dist
 /tmp
 /out-tsc
 /bazel-out
