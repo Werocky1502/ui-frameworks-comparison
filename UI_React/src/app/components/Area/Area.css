@@ -1,0 +1,18 @@
+.area {
+    min-height: 400px;
+    background-color: var(--main-fg-color);
+    border-radius: 10px;
+    border: 1px solid var(--gray-color);
+    box-shadow: 0px 0px 15px var(--main-fg-color);
+}
+
+.area__header {
+    border-bottom: 1px solid var(--gray-color);
+    margin: 0 20px;
+    height: 70px;
+    align-content: center;
+}
+
+.area__content {
+    margin: 10px 20px;
+}

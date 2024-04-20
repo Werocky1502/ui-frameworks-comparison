@@ -1,0 +1,48 @@
+.button {
+    padding: 15px 32px;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 10px;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.button--dark {
+    border: 1px solid var(--main-fg-color);
+    background-color: var(--main-bg-color);
+    color: var(--main-fg-color);
+}
+
+.button--dark:hover {
+    background-color: var(--secondary-bg-color);
+}
+
+.button--dark:disabled {
+    cursor: unset;
+    background-color: var(--gray-color);
+    color: var(--main-fg-color);
+}
+
+.button--dark:not(:disabled):active {
+    transform: scale(0.95);
+}
+
+.button--light {
+    border: 1px solid var(--gray-color);
+    background-color: var(--main-fg-color);
+    color: var(--main-bg-color);
+}
+
+.button--light:hover {
+    background-color: var(--gray-color);
+    color: var(--main-fg-color);
+}
+
+.button--light:not(:disabled):active {
+    transform: scale(0.95);
+}
+
+.button--light:disabled {
+    cursor: unset;
+    background-color: var(--gray-color);
+    color: var(--main-fg-color);
+}

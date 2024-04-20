@@ -1,0 +1,10 @@
+.navigation-menu {
+    margin-bottom: 40px;
+    align-self: center;
+    display: flex;
+    flex-direction: row;
+}
+
+.navigation-menu__item {
+    margin: 0 5px;
+}

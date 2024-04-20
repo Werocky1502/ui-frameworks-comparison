@@ -1,4 +1,29 @@
 ﻿#root {
-    margin: 0 auto;
-    text-align: center;
+    display: flex;
+    flex-grow: 1;
+}
+
+.app__root {
+    display: flex;
+    flex-flow: column;
+    flex-grow: 1;
+}
+
+.app__content {
+    width: 100%;
+    margin: 0 auto 60px;
+}
+
+@media only screen and (min-width: 600px) {
+    .app__content {
+        width: calc(100% - 50px);
+        margin: 0 25px 60px;
+    }
+}
+
+@media only screen and (min-width: 992px) {
+    .app__content {
+        max-width: 1000px;
+        margin: 0 auto 60px;
+    }
 }
