@@ -1,0 +1,13 @@
+:host {
+  align-self: center;
+  display: flex;
+}
+
+.navigation-menu {
+  margin-bottom: 40px;
+  display: flex;
+}
+
+.navigation-menu__item {
+  margin: 0 5px;
+}

@@ -1,0 +1,43 @@
+<div class="add-record-page">
+  <app-area>
+    <div header class="add-record-page__header">
+      <div className="add-record-page__header-text-container">
+        Add new finance record
+      </div>
+    </div>
+    <form
+      content
+      class="add-record-page__form"
+      [formGroup]="financeRecordForm"
+      (ngSubmit)="onSubmitHandler()"
+    >
+      <app-text-input
+        formControlName="description"
+        label="Description"
+        placeholder="Enter description of your record"
+      >
+      </app-text-input>
+      <app-text-input
+        formControlName="amount"
+        label="Amount"
+        placeholder="Enter amount of money"
+        type="number"
+      >
+      </app-text-input>
+      <app-text-input
+        formControlName="date"
+        label="Date"
+        placeholder="Enter date of your record"
+        type="date"
+      >
+      </app-text-input>
+      <div class="add-record-page__submit-button">
+        <app-button
+          variant="dark"
+          text="Add new record"
+          type="submit">
+        </app-button>
+      </div>
+    </form>
+  </app-area>
+</div>

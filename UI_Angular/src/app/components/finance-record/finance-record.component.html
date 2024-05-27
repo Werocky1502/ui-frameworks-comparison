@@ -1,0 +1,23 @@
+<div
+  class="finance-record"
+  [ngClass]="{
+    'finance-record--positive': record.amount > 0,
+    'finance-record--negative': record.amount < 0
+  }"
+>
+  <div class="finance-record__date">
+    {{ record.date.toLocaleDateString() }}
+  </div>
+  <div class="finance-record__description">
+    {{ record.description }}
+  </div>
+  <div class="finance-record__row-end">
+    <div class="finance-record__amount">
+      {{ record.amount }}$
+    </div>
+    <span class="finance-record__row-end-divider"></span>
+    <div class="finance-record__delete-button">
+      <img src="assets/delete.svg" (click)="onDeleteClickHandler($event)" />
+    </div>
+  </div>
+</div>

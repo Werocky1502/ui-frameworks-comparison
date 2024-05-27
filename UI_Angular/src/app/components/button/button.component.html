@@ -1,0 +1,12 @@
+<button
+  class="button"
+  [ngClass]="{
+    'button--dark' : variant === 'dark',
+    'button--light' : variant === 'light'
+  }"
+  [disabled]="disabled"
+  (click)="onButtonClickHandler($event)"
+  [type]="type"
+>
+  {{ text }}
+</button>

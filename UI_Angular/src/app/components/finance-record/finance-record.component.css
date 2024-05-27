@@ -1,0 +1,55 @@
+.finance-record {
+  display: flex;
+  justify-content: space-between;
+  margin: 10px 0;
+  min-height: 40px;
+  padding: 0 15px;
+  border-radius: 10px;
+}
+
+.finance-record--positive {
+  background-color: var(--green-color);
+}
+
+.finance-record--negative {
+  background-color: var(--red-color);
+}
+
+.finance-record__date {
+  align-content: center;
+}
+
+.finance-record__description {
+  align-content: center;
+}
+
+.finance-record__row-end {
+  align-content: center;
+  display: flex;
+  flex-direction: row;
+}
+
+.finance-record__row-end-divider {
+  align-content: center;
+  margin: 5px 15px;
+  border-right: 1px solid var(--gray-color);
+}
+
+.finance-record__amount {
+  align-content: center;
+}
+
+.finance-record__delete-button {
+  align-self: center;
+  width: 20px;
+  height: 20px;
+  cursor: pointer;
+}
+
+.finance-record__delete-button:hover {
+  color: var(--main-fg-color);
+}
+
+.finance-record__delete-button:active {
+  transform: scale(0.95);
+}

@@ -1,0 +1,18 @@
+<div class="navigation-menu">
+  <div class="navigation-menu__item">
+    <app-button
+      text="Main page"
+      (onClick)="navigateToMainPage($event)"
+      [disabled]="currentPath === routesPaths.main"
+    >
+    </app-button>
+  </div>
+  <div class="navigation-menu__item">
+    <app-button
+      text="Add new record"
+      (onClick)="navigateToAddRecordPage($event)"
+      [disabled]="currentPath === routesPaths.addRecord"
+    >
+    </app-button>
+  </div>
+</div>

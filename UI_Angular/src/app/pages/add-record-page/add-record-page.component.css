@@ -1,0 +1,18 @@
+.add-record-page {
+
+}
+
+.add-record-page__header {
+  text-align: center;
+  font-size: 18px;
+}
+
+.add-record-page__form {
+
+}
+
+.add-record-page__submit-button {
+  margin-top: 20px;
+  display: flex;
+  justify-content: center;
+}

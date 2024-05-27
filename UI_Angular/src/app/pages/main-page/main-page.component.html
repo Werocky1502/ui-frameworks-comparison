@@ -1,0 +1,23 @@
+<div class="main-page">
+  <app-area>
+    <div header class="main-page__header">
+      <div class="main-page__header-text-container">
+        Total balance is: {{ totalBalance }}$
+      </div>
+      <app-button
+        variant="dark"
+        text="Add random record"
+        (onClick)="addRandomRecordClickHandler($event)"
+      >
+      </app-button>
+    </div>
+    <div content>
+      <app-finance-record
+        *ngFor="let record of records"
+        [record]="record"
+        (onDeleteClick)="deleteRecordClickHandler($event)"
+      >
+      </app-finance-record>
+    </div>
+  </app-area>
+</div>
