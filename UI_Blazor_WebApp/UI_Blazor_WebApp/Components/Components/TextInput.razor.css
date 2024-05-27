@@ -1,0 +1,16 @@
+﻿.text-input {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 10px;
+}
+
+.text-input__label {
+    margin-bottom: 5px;
+}
+
+.text-input__input {
+    height: 25px;
+    border: none;
+    border-radius: 10px;
+    padding: 5px 10px;
+}

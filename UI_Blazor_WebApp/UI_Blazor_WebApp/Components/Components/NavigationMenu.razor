@@ -1,0 +1,16 @@
+﻿<div class="navigation-menu">
+    <div class="navigation-menu__item">
+        <Button
+            text="Main page"
+            disabled=@IsCurrentPath(AppRoutes.Main)
+            OnClick=@(() => NavigateTo(AppRoutes.Main))
+        />
+    </div>
+    <div class="navigation-menu__item">
+        <Button
+            text="Add new record"
+            disabled=@IsCurrentPath(AppRoutes.AddRecord)
+            OnClick=@(() => NavigateTo(AppRoutes.AddRecord))
+        />
+    </div>
+</div>

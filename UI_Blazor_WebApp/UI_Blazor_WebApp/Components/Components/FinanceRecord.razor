@@ -1,0 +1,22 @@
+﻿@using System.Globalization
+
+<div class="finance-record finance-record--@((Record.Amount > 0) ? "positive" : "negative")">
+    <div class="finance-record__date">
+        @Record.Date.ToString("M/d/yyyy")
+    </div>
+    <div class="finance-record__description">
+        @Record.Description
+    </div>
+    <div class="finance-record__row-end">
+        <div class="finance-record__amount">
+            @Record.Amount$
+        </div>
+        <span class="finance-record__row-end-divider"></span>
+        <div class="finance-record__delete-button">
+            <img
+                src="assets/delete.svg"
+                @onclick="DeleteRecord"
+            />
+        </div>
+    </div>
+</div>

@@ -3,15 +3,27 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.0.31903.59
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "API", "API\API.csproj", "{4AA787F3-BB98-4240-9386-15FD77181EC1}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "API", "API\API.csproj", "{4AA787F3-BB98-4240-9386-15FD77181EC1}"
 EndProject
 Project("{54A90642-561A-4BB1-A94E-469ADEE60C69}") = "UI_React", "UI_React\UI_React.esproj", "{1BE0C5B1-2611-468F-B6D8-07F96A74049F}"
+	ProjectSection(ProjectDependencies) = postProject
+		{4AA787F3-BB98-4240-9386-15FD77181EC1} = {4AA787F3-BB98-4240-9386-15FD77181EC1}
+	EndProjectSection
 EndProject
 Project("{54A90642-561A-4BB1-A94E-469ADEE60C69}") = "UI_Angular", "UI_Angular\UI_Angular.esproj", "{7FEB4114-43DE-4553-997A-96C8CC7EF09F}"
+	ProjectSection(ProjectDependencies) = postProject
+		{1BE0C5B1-2611-468F-B6D8-07F96A74049F} = {1BE0C5B1-2611-468F-B6D8-07F96A74049F}
+		{4AA787F3-BB98-4240-9386-15FD77181EC1} = {4AA787F3-BB98-4240-9386-15FD77181EC1}
+	EndProjectSection
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UI_Blazor_WebApp", "UI_Blazor_WebApp\UI_Blazor_WebApp\UI_Blazor_WebApp.csproj", "{438D188C-9351-4D79-B2C7-839521B22069}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "UI_Blazor_WebApp", "UI_Blazor_WebApp\UI_Blazor_WebApp\UI_Blazor_WebApp.csproj", "{438D188C-9351-4D79-B2C7-839521B22069}"
+	ProjectSection(ProjectDependencies) = postProject
+		{1BE0C5B1-2611-468F-B6D8-07F96A74049F} = {1BE0C5B1-2611-468F-B6D8-07F96A74049F}
+		{4AA787F3-BB98-4240-9386-15FD77181EC1} = {4AA787F3-BB98-4240-9386-15FD77181EC1}
+		{7FEB4114-43DE-4553-997A-96C8CC7EF09F} = {7FEB4114-43DE-4553-997A-96C8CC7EF09F}
+	EndProjectSection
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UI_Blazor_WebApp.Client", "UI_Blazor_WebApp\UI_Blazor_WebApp.Client\UI_Blazor_WebApp.Client.csproj", "{BF19DCE7-1FBA-4181-9C11-0C76AD96EEB7}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "UI_Blazor_WebApp.Client", "UI_Blazor_WebApp\UI_Blazor_WebApp.Client\UI_Blazor_WebApp.Client.csproj", "{BF19DCE7-1FBA-4181-9C11-0C76AD96EEB7}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
