@@ -1,6 +1,20 @@
-@API_HostAddress = http://localhost:5150
+@API_HostAddress = https://localhost:8080
+@documentGuid = 4afc5b1a-3535-44b2-9360-a2d1313ff065
 
-GET {{API_HostAddress}}/weatherforecast/
-Accept: application/json
+GET {{API_HostAddress}}/finance/records
 
 ###
+
+POST {{API_HostAddress}}/finance/records
+Content-Type: application/json
+
+{
+    "id": "{{documentGuid}}",
+    "date": "{{$datetime iso8601}}",
+    "amount": {{$randomInt}},
+    "description": "TestData {{$randomInt}}"
+}
+
+###
+
+DELETE {{API_HostAddress}}/finance/records/{{documentGuid}}
