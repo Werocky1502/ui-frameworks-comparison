@@ -1,0 +1,30 @@
+:root {
+    --main-bg-color: #242424;
+    --secondary-bg-color: #333333;
+    --main-fg-color: #ffffffde;
+    --gray-color: #5a5a5a;
+    --green-color: #6dff4163;
+    --red-color: #ff414163;
+    font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+    line-height: 1.5;
+    font-weight: 400;
+    color: var(--main-bg-color);
+    background-color: var(--main-bg-color);
+}
+
+#root {
+    display: flex;
+    flex-grow: 1;
+}
+
+body {
+    margin: 0;
+    display: flex;
+    min-width: 320px;
+    min-height: 100vh;
+}
+
+h1 {
+    font-size: 3.2em;
+    line-height: 1.1;
+}

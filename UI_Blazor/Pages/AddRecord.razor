@@ -1,0 +1,45 @@
+﻿@attribute [Route(AppRoutes.AddRecord)]
+
+<div class="main-page">
+    <Area>
+        <HeaderFragment>
+            <div class="add-record-page__header">
+                <div className="add-record-page__header-text-container">
+                    Add new finance record
+                </div>
+            </div>
+        </HeaderFragment>
+        <ContentFragment>
+            <EditForm
+                class="add-record-page__form"
+                Model="formRecord"
+                OnSubmit="OnSubmitHandler"
+            >
+                <TextInput
+                    label="Description"
+                    placeholder="Enter description of your record"
+                    @bind-value=formRecord.Description
+                />
+                <TextInput
+                    label="Amount"
+                    placeholder="Enter amount of money"
+                    type=@InputType.Number
+                    @bind-value=formRecord.Amount
+                />
+                <TextInput
+                    label="Date"
+                    placeholder="Enter date of your record"
+                    type=@InputType.Date
+                    @bind-value=formRecord.Date
+                />
+                <div class="add-record-page__submit-button">
+                    <Button
+                        variant=@ButtonVariant.Dark
+                        text="Add new record"
+                        type=@ButtonType.Submit
+                    />
+                </div>
+            </EditForm>
+        </ContentFragment>
+    </Area>
+</div>

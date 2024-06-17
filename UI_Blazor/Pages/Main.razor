@@ -1,0 +1,32 @@
+﻿@attribute [Route(AppRoutes.Main)]
+
+<div class="main-page">
+    <Area>
+        <HeaderFragment>
+            <div class="main-page__header">
+                <div class="main-page__header-text-container">
+                    Total balance is: @totalBalance$
+                </div>
+                <Button
+                    variant=@ButtonVariant.Dark
+                    text="Add random record"
+                    OnClick="AddRandomRecord"
+                />
+            </div>
+        </HeaderFragment>
+        <ContentFragment>
+            @if (records != null)
+            {
+                <div class="main-page__records">
+                    @foreach (var record in records)
+                    {
+                        <FinanceRecord
+                            record=@record
+                            OnDelete="DeleteRecord"
+                        />
+                    }
+                </div>
+            }
+        </ContentFragment>
+    </Area>
+</div>
