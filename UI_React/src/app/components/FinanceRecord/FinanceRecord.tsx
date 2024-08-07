@@ -9,7 +9,7 @@ export interface IFinanceRecordProps {
     onDelete: (recordId: string) => void;
 }
 
-export const FinanceRecord: React.FC<IFinanceRecordProps> = ({ record, onDelete }) => {
+export const FinanceRecord: React.FC<IFinanceRecordProps> = ({ record, onDelete, toggleFavorite, isFavorite = false }) => {
     const deleteHandler = () => onDelete(record.id);
 
     const recordColorClassName = record.amount > 0 ? 'finance-record--positive' : 'finance-record--negative';
@@ -28,8 +28,8 @@ export const FinanceRecord: React.FC<IFinanceRecordProps> = ({ record, onDelete 
                     {record.amount}$
                 </div>
                 <span className='finance-record__row-end-divider' />
-                <div className='finance-record__delete-button'>
-                    <DeleteSvgIcon onClick={deleteHandler}/>
+                <div className='finance-record__delete-button' onClick={deleteHandler}>
+                    <DeleteSvgIcon/>
                 </div>
             </div>
         </div>

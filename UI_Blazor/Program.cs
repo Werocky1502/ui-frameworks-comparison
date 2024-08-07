@@ -2,6 +2,7 @@ using Microsoft.AspNetCore.Components.Web;
 using Microsoft.AspNetCore.Components.WebAssembly.Hosting;
 using UI_Blazor.Mappers;
 using UI_Blazor.Services;
+using UI_Blazor.StateContainers;
 
 namespace UI_Blazor
 {
@@ -23,7 +24,10 @@ namespace UI_Blazor
 
             builder.Services.AddSingleton<RandomDescriptionService>();
             builder.Services.AddSingleton<RandomFinanceRecordService>();
+
             builder.Services.AddSingleton<FinanceRecordMapper>();
+
+            builder.Services.AddSingleton<FinanceRecordsStateContainer>();
 
             await builder.Build().RunAsync();
         }

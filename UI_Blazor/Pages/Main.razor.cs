@@ -1,6 +1,7 @@
 ﻿using Microsoft.AspNetCore.Components;
 using UI_Blazor.Models;
 using UI_Blazor.Services;
+using UI_Blazor.StateContainers;
 
 namespace UI_Blazor.Pages
 {
@@ -12,13 +13,20 @@ namespace UI_Blazor.Pages
         [Inject]
         public RandomFinanceRecordService RandomFinanceRecordService { get; set; }
 
-        private List<FinanceRecordModel> records;
-        private int totalBalance = 0;
+        [Inject]
+        public FinanceRecordsStateContainer FinanceRecordsStateContainer { get; set; }
 
         protected override async Task OnInitializedAsync()
         {
             var financeRecords = await FinanceRecordsService.GetAllFinanceRecords();
-            RefreshRecords(financeRecords);
+
+            FinanceRecordsStateContainer.OnChange += StateHasChanged;
+            FinanceRecordsStateContainer.FinanceRecords = financeRecords.ToList();
+        }
+
+        public void Dispose()
+        {
+            FinanceRecordsStateContainer.OnChange -= StateHasChanged;
         }
 
         private async void AddRandomRecord()
@@ -27,23 +35,14 @@ namespace UI_Blazor.Pages
 
             await FinanceRecordsService.PostFinanceRecord(randomRecord);
 
-            records.Add(randomRecord);
-            RefreshRecords(records);
+            FinanceRecordsStateContainer.AddRecord(randomRecord);
         }
 
         private async Task DeleteRecord(FinanceRecordModel financeRecord)
         {
             await FinanceRecordsService.DeleteFinanceRecord(financeRecord.Id);
 
-            records.Remove(financeRecord);
-            RefreshRecords(records);
-        }
-
-        private void RefreshRecords(IEnumerable<FinanceRecordModel> financeRecords)
-        {
-            records = financeRecords.OrderByDescending(x => x.Date).ToList();
-            totalBalance = records.Sum(r => r.Amount);
-            StateHasChanged();
+            FinanceRecordsStateContainer.DeleteRecord(financeRecord);
         }
     }
 }

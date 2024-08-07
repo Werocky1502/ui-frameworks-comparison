@@ -5,7 +5,7 @@
         <HeaderFragment>
             <div class="main-page__header">
                 <div class="main-page__header-text-container">
-                    Total balance is: @totalBalance$
+                    Total balance is: @FinanceRecordsStateContainer.TotalBalance$
                 </div>
                 <Button
                     variant=@ButtonVariant.Dark
@@ -15,12 +15,13 @@
             </div>
         </HeaderFragment>
         <ContentFragment>
-            @if (records != null)
+            @if (FinanceRecordsStateContainer.FinanceRecords != null)
             {
                 <div class="main-page__records">
-                    @foreach (var record in records)
+                    @foreach (var record in FinanceRecordsStateContainer.FinanceRecords)
                     {
                         <FinanceRecord
+                        @key=record.Id
                             record=@record
                             OnDelete="DeleteRecord"
                         />

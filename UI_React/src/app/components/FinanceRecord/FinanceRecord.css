@@ -15,12 +15,18 @@
     background-color: var(--red-color);
 }
 
+.finance-record__star-button {
+    align-self: center;
+}
+
 .finance-record__date {
     align-content: center;
+    margin: 0 15px;
 }
 
 .finance-record__description {
     align-content: center;
+    margin: 0 auto;
 }
 
 .finance-record__row-end {
@@ -44,10 +50,12 @@
     width: 20px;
     height: 20px;
     cursor: pointer;
+    padding: 3px;
 }
 
 .finance-record__delete-button:hover {
-    color: var(--main-fg-color);
+    fill: red;
+    transition: fill 0.2s;
 }
 
 .finance-record__delete-button:active {

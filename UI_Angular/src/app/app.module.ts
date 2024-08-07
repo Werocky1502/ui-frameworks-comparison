@@ -14,6 +14,7 @@ import { ButtonComponent } from "./components/button/button.component";
 import { FinanceRecordComponent } from './components/finance-record/finance-record.component';
 import { TextInputComponent } from './components/text-input/text-input.component';
 import { ReactiveFormsModule } from "@angular/forms";
+import { SvgIconComponent } from './components/svg-icon/svg-icon.component';
 
 @NgModule({
   declarations: [
@@ -27,6 +28,7 @@ import { ReactiveFormsModule } from "@angular/forms";
     ButtonComponent,
     FinanceRecordComponent,
     TextInputComponent,
+    SvgIconComponent,
   ],
   imports: [
     BrowserModule,

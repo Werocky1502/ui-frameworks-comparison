@@ -2,7 +2,7 @@
   <app-area>
     <div header class="main-page__header">
       <div class="main-page__header-text-container">
-        Total balance is: {{ totalBalance }}$
+        Total balance is: {{ totalBalance$ | async }}$
       </div>
       <app-button
         variant="dark"
@@ -13,7 +13,7 @@
     </div>
     <div content>
       <app-finance-record
-        *ngFor="let record of records"
+        *ngFor="let record of financeRecords$ | async"
         [record]="record"
         (onDeleteClick)="deleteRecordClickHandler($event)"
       >
